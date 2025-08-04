@@ -1,0 +1,56 @@
+# 预提交钩子配置文件
+# 在提交代码前自动运行检查，确保代码质量
+# 使用方法：
+# 1. 安装pre-commit: pip install pre-commit
+# 2. 在项目根目录运行: pre-commit install
+
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: trailing-whitespace  # 删除行尾空格
+    -   id: end-of-file-fixer    # 确保文件以换行符结束
+    -   id: check-yaml           # 检查yaml文件语法
+    -   id: check-added-large-files  # 防止提交大文件
+    -   id: check-toml           # 检查toml文件语法
+    -   id: check-json           # 检查json文件语法
+    -   id: debug-statements     # 检查是否有调试语句
+    -   id: check-merge-conflict  # 检查合并冲突
+
+-   repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+    -   id: black  # Python代码格式化工具
+        language_version: python3
+
+-   repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+    -   id: isort  # 对导入语句进行排序
+        args: ["--profile", "black"]
+
+-   repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+    -   id: flake8  # Python代码风格检查工具
+        additional_dependencies: [
+            flake8-docstrings,  # 检查文档字符串
+            flake8-bugbear,     # 检查常见bug
+            flake8-comprehensions,  # 检查列表/字典/集合推导式
+        ]
+
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.3.0
+    hooks:
+    -   id: mypy  # 静态类型检查工具
+        additional_dependencies: [types-requests]
+
+# 自定义钩子：检查是否有敏感信息
+-   repo: local
+    hooks:
+    -   id: check-secrets
+        name: Check for secrets
+        entry: python -c "import re, sys; exit(bool(re.search(r'(api[_-]?key|secret|password|token)\s*[=:]\s*[\'\"](\w|\d){8,}[\'\"](\s|$)', open(sys.argv[1]).read(), re.IGNORECASE)))"
+        language: system
+        files: \.(py|js|json|yml|yaml|env)$
+        exclude: ^(\.pre-commit-config\.yaml|tests/)

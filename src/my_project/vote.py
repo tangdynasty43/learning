@@ -1,0 +1,67 @@
+student={ 
+    '工学院':{
+        "交通运输":{
+            "2020":{'english':109,'math':108,'physics':107},
+            "2021":{'english':108,'math':107,'physics':106},
+            "2022":{'english':107,'math':106,'physics':105}
+        },
+        '智能制造':{
+            '2020': {'english':100,'math':99,'physics':98},   
+            '2021':{
+                'english':99,
+                'math':98,
+                'physics':97
+            },
+            '2022':{
+                'english':98,
+                'math':97,
+                'physics':96
+            }
+        },
+        '机器人':{
+            '2020':{
+                'english':97,
+                'math':96,
+                'physics':95
+            },
+            '2021':{
+                'english':96,
+                'math':95,
+                'physics':94
+            },
+            '2022':{
+                'english':95,
+                'math':94,
+                'physics':93
+            }
+        }
+    },
+    '计算机学院':{
+        "计算机科学与技术":{
+            "2020":{'english':100,'math':99,'physics':98},
+            "2021":{'english':99,'math':98,'physics':97}
+        },
+        '数据科学与工程':{
+            '2020':{
+                'english':98,
+                'math':97,
+                'physics':96
+            },
+            '2021':{
+                'english':97,
+                'math':96,
+                'physics':95
+            },
+            '2022':{
+                'english':96,
+                'math':95,
+                'physics':94
+            }
+        }
+    }
+}
+merged_dict=student['工学院']['交通运输']['2020'] | student['工学院']['交通运输']['2021'] | student['工学院']['交通运输']['2022']
+print(merged_dict)
+
+
+
