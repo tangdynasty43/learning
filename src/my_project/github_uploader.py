@@ -161,6 +161,10 @@ class GitHubUploader:
             print("5. 粘贴上面的公钥内容")
             print("6. 点击 'Add SSH key'")
             
+            print("\n💡 PowerShell复制公钥命令:")
+            print(f"Get-Content '{public_key_file}' | Set-Clipboard")
+            print("或者直接复制上面显示的公钥内容")
+            
             input("\n按回车键继续...")
         else:
             print("❌ 公钥文件不存在")
