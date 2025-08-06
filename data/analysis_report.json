@@ -1,0 +1,58 @@
+{
+  "analysis_time": "2025-08-06T15:31:43.629478",
+  "total_data_files": 8,
+  "data_summary": {
+    "app_config": {
+      "type": "dict",
+      "size_bytes": 121,
+      "has_content": true,
+      "key_count": 3
+    },
+    "excel_processing_result": {
+      "type": "dict",
+      "size_bytes": 758,
+      "has_content": true,
+      "key_count": 9
+    },
+    "excel_stats": {
+      "type": "dict",
+      "size_bytes": 142,
+      "has_content": true,
+      "key_count": 5
+    },
+    "execution_log": {
+      "type": "list",
+      "size_bytes": 1497,
+      "has_content": true,
+      "item_count": 5
+    },
+    "metadata": {
+      "type": "dict",
+      "size_bytes": 166,
+      "has_content": true,
+      "key_count": 4
+    },
+    "processing_status": {
+      "type": "dict",
+      "size_bytes": 165,
+      "has_content": true,
+      "key_count": 4
+    },
+    "projects": {
+      "type": "list",
+      "size_bytes": 328,
+      "has_content": true,
+      "item_count": 3
+    },
+    "users": {
+      "type": "list",
+      "size_bytes": 288,
+      "has_content": true,
+      "item_count": 3
+    }
+  },
+  "recommendations": [
+    "Excel数据处理成功，可以进行进一步分析",
+    "用户和项目数据完整，可以进行关联分析"
+  ]
+}

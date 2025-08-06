@@ -1,0 +1,35 @@
+[
+  {
+    "timestamp": "2025-08-06T15:31:24.729903",
+    "event_type": "coordinator_started",
+    "message": "数据协调器初始化完成",
+    "data": {}
+  },
+  {
+    "timestamp": "2025-08-06T15:31:24.733508",
+    "event_type": "data_cleared",
+    "message": "已清理 8 个共享数据文件",
+    "data": {}
+  },
+  {
+    "timestamp": "2025-08-06T15:31:24.734233",
+    "event_type": "file_execution_start",
+    "message": "开始执行 file_a_producer.py",
+    "data": {}
+  },
+  {
+    "timestamp": "2025-08-06T15:31:25.826680",
+    "event_type": "file_execution_error",
+    "message": "file_a_producer.py 执行失败",
+    "data": {
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\唐朝\\python\\src\\my_project\\file_a_producer.py\", line 134, in <module>\n    update_processing_status(\"starting\", \"开始数据处理\")\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\唐朝\\python\\src\\my_project\\file_a_producer.py\", line 128, in update_processing_status\n    print(f\"\\U0001f4ca 状态更新: {status} - {message}\")\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'gbk' codec can't encode character '\\U0001f4ca' in position 0: illegal multibyte sequence\n",
+      "returncode": 1
+    }
+  },
+  {
+    "timestamp": "2025-08-06T15:31:25.827818",
+    "event_type": "pipeline_error",
+    "message": "数据生产者执行失败，停止流水线",
+    "data": {}
+  }
+]
